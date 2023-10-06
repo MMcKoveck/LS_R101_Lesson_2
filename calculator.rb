@@ -1,3 +1,4 @@
+system('clear')
 
 def prompt(message)
   Kernel.puts("=> #{message}")
@@ -95,7 +96,9 @@ loop do # MAIN LOOP
            when '4'
              num1.to_f() / num2.to_f()
            end
-
+  result = result.to_s
+  result.match(/\./) ? (result = sprintf('%.2f', result)) : result
+  result.slice!('.00')
   prompt("The result is #{result}.")
 
   prompt("Do you want to perform another calculation? (Y to calculate again)")
@@ -105,7 +108,7 @@ end
 
 prompt("Thank you for using calculator!")
 
-#=begin MODDING OPTIONS
+=begin MODDING OPTIONS
 ==> INTEGER VALIDATION
 Option 1 - this is the easiest way to improve the method. It will handle "0" correctly.
 
@@ -307,4 +310,4 @@ end
 # now you can just do:
 prompt('welcome')
 Now, when non-English users want to use your calculator, all they have to do is change the LANGUAGE setting, provided you have translated the messages for them already.
-  
+=end
