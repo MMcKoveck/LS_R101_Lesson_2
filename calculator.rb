@@ -106,7 +106,11 @@ loop do # MAIN LOOP
   break unless answer.downcase().start_with?('y')
 end
 
-prompt("Thank you for using calculator!")
+prompt("Thank You For Using Calculator! <=")
+prompt("Goodbye #{name}!".center(31) + ' <=') 
+sleep(4)
+system('clear')
+
 
 =begin MODDING OPTIONS
 ==> INTEGER VALIDATION
